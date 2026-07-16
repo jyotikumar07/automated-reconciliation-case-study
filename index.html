@@ -4,13 +4,247 @@
     <meta charset="UTF-8">
     <title>Bookkeeping Case Study</title>
     <style>
+        
         body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; max-width: 800px; color: #333; }
         h1 { color: #2c3e50; }
         .proof-img { max-width: 100%; border: 1px solid #ccc; margin: 20px 0; }
         .btn { display: inline-block; background: #27ae60; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+       
+        /* General Layout Variables & Container */
+:root {
+    --primary-color: #2b4c7e;
+    --secondary-color: #4a90e2;
+    --dark-neutral: #2c3e50;
+    --light-neutral: #f8f9fa;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+}
+
+/* About Me Styles */
+.about-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-neutral);
+    margin-bottom: 20px;
+}
+
+.skills-container {
+    margin-top: 40px;
+}
+
+.skills-container h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: var(--light-neutral);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+}
+
+/* Projects Styles */
+.projects-section {
+    padding: 80px 0;
+    background-color: var(--light-neutral);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-badge {
+    align-self: flex-start;
+    background-color: rgba(74, 144, 226, 0.1);
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #5a6b7c;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.project-tech span {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.project-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
+    <!-- About Me Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>
+                I am a detail-oriented Data Analyst with a solid technical foundation, holding a Master’s degree in Computer Science and backed by a rigorous three-year Data Analyst Bootcamp. My unique skill set bridges the gap between raw data infrastructure and financial business intelligence, allowing me to translate complex numbers into clear, actionable growth strategies.
+            </p>
+            <p>
+                In addition to my data analytics background, I am certified as an Intuit Certified Bookkeeper and hold my QuickBooks Online ProAdvisor Level 1 certification. This combination of financial acumen and analytical expertise enables me to design highly functional data tools with strong commercial relevance. Whether writing optimized SQL queries in Amazon Athena as a database volunteer or building advanced, interactive Power BI dashboards, I love finding the stories hidden within data.
+            </p>
+            <div class="skills-container">
+                <h3>Core Tech Stack & Skills</h3>
+                <div class="skills-tags">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Power Query & DAX</span>
+                    <span class="tag">SQL (Amazon Athena)</span>
+                    <span class="tag">QuickBooks Online</span>
+                    <span class="tag">Financial Bookkeeping</span>
+                    <span class="tag">Data Visualization</span>
+                    <span class="tag">Database Management</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-badge">Power BI & Finance</div>
+                    <h3>Dynamic Financial Cash Flow Dashboard</h3>
+                    <p>
+                        Developed a comprehensive, dynamic cash flow dashboard in Power BI designed to track real-time business liquidity and financial performance. Leveraged advanced DAX calculations and Power Query to clean raw transaction logs, calculate rolling metrics, and create highly interactive visualizations—including custom dynamic charts to present clear breakdown metrics.
+                    </p>
+                    <div class="project-tech">
+                        <span>Power BI</span>
+                        <span>DAX</span>
+                        <span>Power Query</span>
+                        <span>Financial Analysis</span>
+                    </div>
+                    <a href="#" class="project-link">View Project Walkthrough &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-badge">Database & SQL</div>
+                    <h3>NGO Database Assistant & SQL Analytics</h3>
+                    <p>
+                        Volunteered as a database assistant for an NGO, writing optimized SQL queries in Amazon Athena to analyze large-scale organizational datasets. Built query structures to analyze donor trends and operational efficiency, directly supporting the organization’s transition to data-driven decision-making.
+                    </p>
+                    <div class="project-tech">
+                        <span>SQL</span>
+                        <span>Amazon Athena</span>
+                        <span>Database Admin</span>
+                        <span>NGO Analytics</span>
+                    </div>
+                    <a href="#" class="project-link">View Repository &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
     <h1>Tech-Forward Bookkeeping & Financial Audit Case Study</h1>
     <p>This live case study showcases an end-to-end month-end closing process, clearing a complex bank feed and reconciling the ledger to an absolute $0.00 variance.</p>
     
